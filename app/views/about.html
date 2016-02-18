@@ -1,0 +1,87 @@
+<h1>{{currentMovie.title}} ({{currentMovie.releaseYear}})</h1>
+<div class="row">
+  <div class="col-sm-3">
+    <img ng-src="images/{{currentMovie.id}}.png" class="btn-block" alt="{{currentMovie.title}}"/>
+  </div>
+  <div class="col-sm-9">
+    <h4>Synopsis</h4>
+
+    <p>
+      {{currentMovie.shortSynopsis}}
+    </p>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h4>Gross</h4>
+
+        <div>
+          {{currentMovie.grossIncome | currency}}
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <h4>Cast</h4>
+
+        <div ng-repeat="actor in currentMovie.actors" ng-click="actorDetail(currentMovie, actor)">
+          {{actor.name}}
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h4>Score</h4>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="img-circle bg-yellow badge">
+              <h3 class="m-bt-n">
+                <span class="glyphicon glyphicon-star"></span>
+                {{currentMovie.score}}
+              </h3>
+            </div>
+            <small>General Rating</small>
+          </div>
+          <div class="col-sm-3 border-left" ng-if="myRating>0">
+            <h3 class="m-bt-n">
+              <span class="glyphicon glyphicon-star text-primary"></span>
+              {{myRating|number}}
+            </h3>
+            <small>Your rating</small>
+          </div>
+          <div class="border-left" ng-class="{'col-sm-6':myRating>0,'col-sm-9':myRating==0}">
+            <div ng-hide="showRater">
+              <h3 class="m-bt-n" ng-click="showRater = !showRater">
+                <span class="glyphicon glyphicon-star"></span>
+              </h3>
+              <small>Rate this</small>
+            </div>
+            <div class="bg-primary  padder border-sm row" ng-show="showRater">
+              <div class="col-sm-10">
+                <uib-rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)"
+                            on-leave="overStar" titles="['one','two','three']" ng-click="saveRating(overStar)"
+                            aria-labelledby="default-rating"></uib-rating>
+                <b>{{overStar}}/{{max}}</b>
+              </div>
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-xs" ng-click="showRater = !showRater">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <h5>Genre:</h5>
+
+      <div class="col-sm-12">
+        <p ng-repeat="genre in currentMovie.genre" class="pull-left">
+          {{genre.name}}<span>{{!$last ? ',':'.' }}</span>
+        </p>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>{{currentMovie|json}}</pre>

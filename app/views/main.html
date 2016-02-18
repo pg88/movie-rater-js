@@ -1,0 +1,23 @@
+<div class="bg-info"   ng-if="search" ng-hide="(movieList | filter: search).length==0">
+  <div class="padder">You're looking for : <strong> {{search}}</strong></div>
+</div>
+<div class="row">
+  <div class="col-sm-3" ng-repeat="movie in movieList| filter: search | orderBy: '-score' " ng-click="seeMovieDetail(movie)">
+    <div class="score-holder">
+      <div class="score text-white">
+        {{movie.score}}
+      </div>
+    </div>
+    <img ng-src="images/{{movie.id}}.png" class="btn-block" alt="{{movie.title | lowercase}}}"/>
+    <h4>{{movie.title | uppercase}}</h4>
+    <div class="btn-block">
+      <p class="color-gray">{{movie.shortSynopsis}}</p>
+    </div>
+    <hr class="border-top-blue"/>
+  </div>
+  <div ng-show="(movieList | filter: search).length==0" class="col-sm-12">
+    <div class="bg-danger padder">
+      No results found for <strong>{{search}}</strong> . Try with another movie title.
+    </div>
+  </div>
+</div>

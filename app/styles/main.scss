@@ -1,0 +1,38 @@
+@import 'colors';
+@import 'overrides';
+
+.padder{
+  padding: 16px;
+}
+.text-yellow{
+  color: $color-yellow;
+}
+.border-left{
+  border-left: 1px solid $color-gray-light ;
+}
+.border-sm{
+  border-radius: 4px;
+}
+.bg-yellow{
+  background: $color-yellow;
+}
+.score-holder{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 65%;
+  margin: 15px;
+  background: $color-orange-light;
+  display: table;
+  >.score{
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    font-size: 28px;
+    color:$color-white;
+  }
+}
+
+.color-gray{
+  color: $color-gray-light
+}
