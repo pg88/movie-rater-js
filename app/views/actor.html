@@ -1,1 +1,27 @@
-<p>actor view</p>
+<div class="row">
+  <small class="col-sm-10 m-t-n">BIO</small>
+  <div class="col-sm-2">
+    <button type="button" class="btn btn-warning" ng-click="open()">
+      <span class="glyphicon glyphicon-edit"></span>
+      Edit
+    </button>
+  </div>
+</div>
+<div class="row m-t-md">
+  <div class="col-sm-9">
+    <h1 class="m-t-n">{{currentActor.firstName}} {{currentActor.lastName}} <small>{{currentActor.birthdate}} <i tooltip-placement="top-left" uib-tooltip="{{currentActor.gender}}"  class="fa fa-{{currentActor.gender}}"></i></small></h1>
+    <p>{{currentActor.bio}}</p>
+  </div>
+  <div class="col-sm-3">
+    <img class="img-circle m-auto d-block" ng-src="images/actor_{{currentActor.actorId}}.jpg" height="150" width="150" alt="{{currentActor.firstName}}_{{currentActor.lastName}}"/>
+  </div>
+</div>
+<hr/>
+<small><strong>MOVIES KNOWN FOR</strong></small>
+<div class="row m-t-sm">
+    <div class="col-sm-2 cursor-pointer" ng-repeat="movie in currentActor.movieList" ui-sref="movie({movieId:movie.movieId})">
+        <img ng-src="images/{{movie.data.id}}.png" class="btn-block" alt="{{movie.data.title | lowercase}}"/>
+        <h5>{{movie.data.title | uppercase}}</h5>
+        <hr class="border-top-blue"/>
+    </div>
+</div>

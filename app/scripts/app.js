@@ -39,7 +39,12 @@ angular
       .state('actor', {
         url:'/actor/:actorId',
         templateUrl: 'views/actor.html',
-        controller: 'ActorDetailController'
+        controller: 'ActorDetailController',
+        resolve:{
+          Actor:['$stateParams',function($stateParams){
+              return $stateParams.actorId;
+          }]
+        }
       })
 
      $urlRouterProvider.otherwise("/");

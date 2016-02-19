@@ -1,0 +1,81 @@
+<div class="modal-header">
+  <h3 class="modal-title">Edit Movie ({{thisMovie.title}})</h3>
+</div>
+<div class="modal-body">
+  <form role='form' name="movieUpdater">
+    <div class="form-group">
+      <label for="title">Movie Title</label>
+      <input type="text" id="title" class="form-control" placeholder="Movie Title" ng-model="thisMovie.title" required
+             autofocus>
+    </div>
+    <div class="form-group">
+      <label for="year">Release Year</label>
+      <input type="text" id="year" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="4" maxlength="4" class="form-control"
+             placeholder="Release Year" ng-model="thisMovie.releaseYear" required>
+    </div>
+    <div class="form-group">
+      <label for="director">Director</label>
+      <input type="text" id="director"  minlength="4" class="form-control"
+             placeholder="Director" ng-model="thisMovie.director" required>
+    </div>
+    <div class="form-group">
+      <label for="gross">Gross Income</label>
+      <input type="text" id="gross" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+             class="form-control" placeholder="Gross Income" ng-model="thisMovie.grossIncome" required>
+    </div>
+    <div class="form-group">
+      <label for="short">Actors</label>
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="newActor" placeholder="Add a new actor" class="form-control">
+          <span class="input-group-btn">
+            <input ng-click="addItem('actor',newActor)" class="btn btn-primary" value="Add">
+          </span>
+        </div>
+      </div>
+      <p class="input-group" ng-repeat="actor in thisMovie.actors">
+        <input type="text" ng-model="actor.name" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="removeItem(thisMovie.actors,actor)" aria-label="Remove">X</button>
+        </span>
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="short">Genre</label>
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="newGenre" placeholder="Add a new genre" class="form-control">
+          <span class="input-group-btn">
+            <input ng-click="addItem('genre',newGenre)" class="btn btn-primary" value="Add">
+          </span>
+        </div>
+      </div>
+      <p class="input-group" ng-repeat="genre in thisMovie.genre">
+        <input type="text" ng-model="genre.name" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="removeItem(thisMovie.genre,genre)" aria-label="Remove">X</button>
+        </span>
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="short">Short Synopsis</label>
+      <textarea class="form-control" placeholder="Short Synopsis" rows="5" id="short" ng-model="thisMovie.shortSynopsis"
+                required></textarea>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <button class="btn btn-default  btn-block" ng-click="closeModal()">
+          <span class="glyphicon glyphicon-remove"></span>
+          Cancel
+        </button>
+      </div>
+      <div class="col-sm-9">
+        <button class="btn  btn-primary btn-block" ng-disabled="movieUpdater.$invalid"
+                ng-click="updateMovie(thisMovie)">
+          <span class="glyphicon glyphicon-save"></span>
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

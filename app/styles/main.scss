@@ -1,6 +1,31 @@
 @import 'colors';
 @import 'overrides';
 
+
+//margins
+@each $namePos , $position in ("t":top,"r":right,"b":bottom,"l":left) {
+  $number: 0px;
+  @each $name in ("xs","sm","b","md","lg","xl","xxl") {
+    @if($name=="b"){
+      .m-#{$namePos}{
+        margin-#{$position}:$number;
+      }//bg-acc
+    }@else if ($name=="lg" or $name=="xl" or $name=="xxl"){
+      $number:$number + 10;
+    }@else{
+      $number:$number + 5;
+    }
+    .m-#{$namePos}-#{$name}{
+      margin-#{$position}:$number !important;
+    }
+  }//each
+
+  .m-#{$namePos}-n{
+    margin-#{$position}: 0 !important;
+  }
+
+}//each
+
 .padder{
   padding: 16px;
 }
@@ -12,6 +37,15 @@
 }
 .border-sm{
   border-radius: 4px;
+}
+.m-auto{
+  margin: 0 auto;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.d-block{
+  display: block;
 }
 .bg-yellow{
   background: $color-yellow;
@@ -35,4 +69,7 @@
 
 .color-gray{
   color: $color-gray-light
+}
+.description-movie{
+  height: 120px;
 }

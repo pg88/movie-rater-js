@@ -5,6 +5,117 @@
   margin-bottom: 0 !important;
   margin-top: 0 !important; }
 
+.m-t-n {
+  margin-top: 0 !important; }
+
+.m-t-xs {
+  margin-top: 5px !important; }
+
+.m-t-sm {
+  margin-top: 10px !important; }
+
+.m-t {
+  margin-top: 10px; }
+
+.m-t-b {
+  margin-top: 10px !important; }
+
+.m-t-md {
+  margin-top: 15px !important; }
+
+.m-t-lg {
+  margin-top: 25px !important; }
+
+.m-t-xl {
+  margin-top: 35px !important; }
+
+.m-t-xxl {
+  margin-top: 45px !important; }
+
+.m-t-n {
+  margin-top: 0 !important; }
+
+.m-r-xs {
+  margin-right: 5px !important; }
+
+.m-r-sm {
+  margin-right: 10px !important; }
+
+.m-r {
+  margin-right: 10px; }
+
+.m-r-b {
+  margin-right: 10px !important; }
+
+.m-r-md {
+  margin-right: 15px !important; }
+
+.m-r-lg {
+  margin-right: 25px !important; }
+
+.m-r-xl {
+  margin-right: 35px !important; }
+
+.m-r-xxl {
+  margin-right: 45px !important; }
+
+.m-r-n {
+  margin-right: 0 !important; }
+
+.m-b-xs {
+  margin-bottom: 5px !important; }
+
+.m-b-sm {
+  margin-bottom: 10px !important; }
+
+.m-b {
+  margin-bottom: 10px; }
+
+.m-b-b {
+  margin-bottom: 10px !important; }
+
+.m-b-md {
+  margin-bottom: 15px !important; }
+
+.m-b-lg {
+  margin-bottom: 25px !important; }
+
+.m-b-xl {
+  margin-bottom: 35px !important; }
+
+.m-b-xxl {
+  margin-bottom: 45px !important; }
+
+.m-b-n {
+  margin-bottom: 0 !important; }
+
+.m-l-xs {
+  margin-left: 5px !important; }
+
+.m-l-sm {
+  margin-left: 10px !important; }
+
+.m-l {
+  margin-left: 10px; }
+
+.m-l-b {
+  margin-left: 10px !important; }
+
+.m-l-md {
+  margin-left: 15px !important; }
+
+.m-l-lg {
+  margin-left: 25px !important; }
+
+.m-l-xl {
+  margin-left: 35px !important; }
+
+.m-l-xxl {
+  margin-left: 45px !important; }
+
+.m-l-n {
+  margin-left: 0 !important; }
+
 .padder {
   padding: 16px; }
 
@@ -16,6 +127,15 @@
 
 .border-sm {
   border-radius: 4px; }
+
+.m-auto {
+  margin: 0 auto; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.d-block {
+  display: block; }
 
 .bg-yellow {
   background: #f4cd2a; }
@@ -37,5 +157,8 @@
 
 .color-gray {
   color: #7d8c97; }
+
+.description-movie {
+  height: 120px; }
 
 /*# sourceMappingURL=main.css.map */

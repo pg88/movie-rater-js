@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <h3 class="modal-title">Edit Actor ({{thisActor.firstName}} {{thisActor.lastName}})</h3>
+</div>
+<div class="modal-body">
+  <form role='form' name="actorUpdater">
+    <div class="form-group">
+      <label for="first">First Name</label>
+      <input type="text" id="first" class="form-control" placeholder="First Name" ng-model="thisActor.firstName" required
+             autofocus>
+    </div>
+    <div class="form-group">
+      <label for="last">Last Name</label>
+      <input type="text" id="last" class="form-control" placeholder="First Name" ng-model="thisActor.lastName" required>
+    </div>
+    <p class="form-group">
+      <label>Birthdate</label>
+      <input type="text"  class="form-control"  ng-model="thisActor.birthdate" />
+      <small ng-show="showDateMessage" class="text-danger">Date format must be MM-DD-YYYY, only numbers and dashes allowed. Please correct this.</small>
+    </p>
+    <p class="form-group">
+      <label>Gender</label>
+      <div class="btn-group">
+        <label class="btn btn-primary" ng-model="thisActor.gender" uib-btn-radio="'female'"><i class="fa fa-female fa-fw"></i>Female</label>
+        <label class="btn btn-primary" ng-model="thisActor.gender" uib-btn-radio="'male'"><i class="fa fa-male fa-fw"></i>Male</label>
+      </div>
+    </p>
+    <div class="form-group">
+      <label for="short">Short Bio</label>
+      <textarea class="form-control" placeholder="Short Synopsis" rows="5" id="short" ng-model="thisActor.bio"
+                required></textarea>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <button class="btn btn-default  btn-block" ng-click="closeModal()">
+          <span class="glyphicon glyphicon-remove"></span>
+          Cancel
+        </button>
+      </div>
+      <div class="col-sm-9">
+        <button class="btn  btn-primary btn-block" ng-disabled="actorUpdater.$invalid"
+                ng-click="updateActor(thisActor)">
+          <span class="glyphicon glyphicon-save"></span>
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
