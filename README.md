@@ -3,14 +3,23 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
-## Build & development
+##INSTRUCTIONS FOR RUNNING JSMOVIE APP
 
-Run `grunt` for building and `grunt serve` for preview.
+###Requirements:
 
-## Build & production
+* Nodejs installed and npm.
+* Bower (http://bower.io/)
+* Ruby (macOSX is already installed)
+* Sass Gem (http://sass-lang.com/install)
+* Compass Gem (http://compass-style.org/install/)
 
-Run `grunt` for building and `grunt serve:dist` for preview with .min files and compression.
+1.- Unzip the movie-rater-js-master.zip file. <br>
+2.- Open the path where is located the movie-rater-js-master folder in the terminal. <br>
+3.- Execute the command  `npm install ` or  `sudo npm install `. <br>
+4.- After completed the installation from npm dependencies, execute this command  `bower install ` or  `sudo bower install —allow-root ` . <br>
+5.- After the installation from bower dependencies, execute on terminal  `grunt serve ` to preview the 
+application for development. <br>
 
-## Testing
+The app will run on http://localhost:9000/#/  <br>
 
-Running `grunt test` will run the unit tests with karma.
+The app is optimized for Google Chrome as required. <br>
